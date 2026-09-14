@@ -5,46 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arq. Sergio Díaz | Arquitectura y Construcción</title>
   <link rel="stylesheet" href="style.css">
-  <style>
-    /* Estilos rápidos para el menú interactivo de servicios */
-    .services-quick-select {
-      background: #f8f9fa;
-      padding: 60px 20px;
-      text-align: center;
-    }
-    .services-quick-select h2 {
-      font-size: 2rem;
-      margin-bottom: 10px;
-    }
-    .services-quick-select p {
-      color: #666;
-      margin-bottom: 30px;
-    }
-    .options-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 15px;
-      max-width: 1000px;
-      margin: 0 auto;
-    }
-    .btn-option {
-      background: #ffffff;
-      border: 2px solid #25D366;
-      color: #128C7E;
-      padding: 15px 20px;
-      font-weight: bold;
-      border-radius: 8px;
-      cursor: pointer;
-      transition: all 0.3s ease;
-      text-decoration: none;
-      display: block;
-    }
-    .btn-option:hover {
-      background: #25D366;
-      color: #ffffff;
-      transform: translateY(-2px);
-    }
-  </style>
 </head>
 <body>
 
@@ -74,7 +34,7 @@
     </div>
   </section>
 
-  <!-- SECCIÓN INTERACTIVA: SELECCIÓN DE PROYECTO RÁPIDO -->
+  <!-- SECCIÓN INTERACTIVA: SELECCIÓN RÁPIDA -->
   <section id="servicios-whatsapp" class="services-quick-select">
     <h2>¿Qué tipo de proyecto deseas iniciar?</h2>
     <p>Selecciona una opción para comunicarte directamente con el Arq. Sergio Díaz:</p>
@@ -192,15 +152,12 @@
     <p>&copy; 2026 Arq. Sergio Díaz. Todos los derechos reservados.</p>
   </footer>
 
-  <!-- LÓGICA DE WHATSAPP -->
+  <!-- SCRIPT DE WHATSAPP -->
   <script>
-    // Configura el número de WhatsApp con lada (Ej: 52312XXXXXXX)
     const telefonoSergio = "523121234567";
 
-    // 1. Envío desde los botones rápidos
     function enviarOpcionDirecta(opcion) {
       let mensaje = "";
-
       switch (opcion) {
         case 'Proyecto arquitectónico desde cero':
           mensaje = "Hola Sergio, te contacto porque quiero armar un proyecto arquitectónico desde cero.";
@@ -217,15 +174,11 @@
         default:
           mensaje = "Hola Sergio, me gustaría cotizar un proyecto arquitectónico.";
       }
-
-      const url = `https://wa.me/${telefonoSergio}?text=${encodeURIComponent(mensaje)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${telefonoSergio}?text=${encodeURIComponent(mensaje)}`, '_blank');
     }
 
-    // 2. Envío desde el formulario completo al final de la página
     function enviarWhatsAppFormulario(e) {
       e.preventDefault();
-
       const nombre = document.getElementById('nombre').value;
       const contacto = document.getElementById('telefono').value;
       const servicio = document.getElementById('servicio').value;
@@ -237,8 +190,7 @@
                     `*Servicio:* ${servicio}\n` +
                     `*Detalles:* ${detalle}`;
 
-      const url = `https://wa.me/${telefonoSergio}?text=${encodeURIComponent(texto)}`;
-      window.open(url, '_blank');
+      window.open(`https://wa.me/${telefonoSergio}?text=${encodeURIComponent(texto)}`, '_blank');
     }
   </script>
 
