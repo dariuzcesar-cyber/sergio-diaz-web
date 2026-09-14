@@ -1,437 +1,246 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sergio Díaz | Arquitectura & Construcción</title>
-    <!-- Tailwind CSS CDN -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    colors: {
-                        brand: {
-                            navy: '#0f172a',
-                            slate: '#1e293b',
-                            bronze: '#b45309',
-                            bronzeHover: '#d97706',
-                            bg: '#f8fafc',
-                        }
-                    },
-                    fontFamily: {
-                        serif: ['Cinzel', 'serif'],
-                        sans: ['Plus Jakarta Sans', 'sans-serif'],
-                    }
-                }
-            }
-        }
-    </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Arq. Sergio Díaz | Arquitectura y Construcción</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    /* Estilos rápidos para el menú interactivo de servicios */
+    .services-quick-select {
+      background: #f8f9fa;
+      padding: 60px 20px;
+      text-align: center;
+    }
+    .services-quick-select h2 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    .services-quick-select p {
+      color: #666;
+      margin-bottom: 30px;
+    }
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+    .btn-option {
+      background: #ffffff;
+      border: 2px solid #25D366;
+      color: #128C7E;
+      padding: 15px 20px;
+      font-weight: bold;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      text-decoration: none;
+      display: block;
+    }
+    .btn-option:hover {
+      background: #25D366;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+  </style>
 </head>
-<body class="bg-brand-bg text-slate-800 font-sans antialiased selection:bg-brand-bronze selection:text-white relative cursor-none">
+<body>
 
-    <!-- Custom Cursor -->
-    <div id="cursor-dot" class="fixed top-0 left-0 w-3 h-3 bg-brand-bronze rounded-full pointer-events-none z-50 transition-transform duration-75 ease-out transform -translate-x-1/2 -translate-y-1/2 hidden md:block"></div>
-    <div id="cursor-outline" class="fixed top-0 left-0 w-8 h-8 border border-brand-bronze/60 rounded-full pointer-events-none z-50 transition-all duration-300 ease-out transform -translate-x-1/2 -translate-y-1/2 hidden md:block"></div>
+  <!-- HEADER / NAVBAR -->
+  <header class="navbar">
+    <div class="logo">
+      <img src="assets/logo/logo.png" alt="Arq. Sergio Díaz Logo">
+    </div>
+    <nav>
+      <a href="#proyectos">Proyectos</a>
+      <a href="#servicios-whatsapp" class="btn-nav">Iniciar proyecto por WhatsApp</a>
+    </nav>
+  </header>
 
-    <!-- Navigation Bar -->
-    <header class="fixed top-0 left-0 w-full z-40 bg-brand-navy/90 backdrop-blur-md border-b border-white/10 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 h-20 flex items-center justify-between">
-            <a href="#" class="flex items-center gap-3">
-                <img src="assets/logo/SERGIODIAZLOGO2026.png" alt="Sergio Díaz Logo" class="h-8 md:h-9 w-auto hover-trigger" onerror="this.src='assets/logo/logo.png'">
-                <span class="font-serif text-white text-base md:text-lg tracking-wider font-bold">SERGIO DÍAZ <span class="text-brand-bronze font-sans text-[10px] md:text-xs tracking-widest block font-normal uppercase">Arquitectura</span></span>
-            </a>
+  <!-- HERO SECTION -->
+  <section class="hero-split">
+    <div class="hero-content">
+      <h1>Diseño Arquitectónico y Construcción con Identidad</h1>
+      <p>Transformamos ideas en espacios funcionales, estéticos y duraderos. Proyectos residenciales y comerciales pensados a la medida de tus necesidades.</p>
+      <div class="hero-buttons">
+        <a href="#contacto" class="btn-primary">Comencemos a planear tu obra</a>
+        <a href="#proyectos" class="btn-secondary">Ver portafolio</a>
+      </div>
+    </div>
+    <div class="hero-image">
+      <img src="assets/imagen/SergioBookV1-14.webp" alt="Arq. Sergio Díaz">
+    </div>
+  </section>
 
-            <nav class="hidden md:flex items-center gap-8 text-sm tracking-wide text-slate-300">
-                <a href="#inicio" class="hover:text-brand-bronze transition-colors hover-trigger">Inicio</a>
-                <a href="#sobre-mi" class="hover:text-brand-bronze transition-colors hover-trigger">Sobre Mí</a>
-                <a href="#servicios" class="hover:text-brand-bronze transition-colors hover-trigger">Servicios</a>
-                <a href="#portafolio" class="hover:text-brand-bronze transition-colors hover-trigger">Proyectos 360°</a>
-                <a href="#contacto" class="hover:text-brand-bronze transition-colors hover-trigger">Contacto</a>
-            </nav>
+  <!-- SECCIÓN INTERACTIVA: SELECCIÓN DE PROYECTO RÁPIDO -->
+  <section id="servicios-whatsapp" class="services-quick-select">
+    <h2>¿Qué tipo de proyecto deseas iniciar?</h2>
+    <p>Selecciona una opción para comunicarte directamente con el Arq. Sergio Díaz:</p>
 
-            <div class="flex items-center gap-4">
-                <a href="https://www.instagram.com/sergiodiaz_arquitectura?stkn=ZnRlaDkwZ3R2ZXRh" target="_blank" rel="noopener noreferrer" class="text-slate-300 hover:text-brand-bronze transition-colors hover-trigger p-1" aria-label="Instagram de Sergio Díaz">
-                    <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                </a>
-                <a href="https://wa.me/523121071335?text=Hola%20Sergio,%20me%20interesa%20consultar%20sobre%20un%20proyecto%20arquitectónico." target="_blank" class="hidden sm:inline-flex items-center px-4 md:px-5 py-2 md:py-2.5 bg-brand-bronze hover:bg-brand-bronzeHover text-white text-xs font-semibold tracking-widest uppercase rounded-sm transition-all hover-trigger shadow-lg shadow-brand-bronze/20">
-                    Agendar Consulta
-                </a>
-            </div>
+    <div class="options-grid">
+      <button class="btn-option" onclick="enviarOpcionDirecta('Proyecto arquitectónico desde cero')">
+        📐 Proyecto desde cero
+      </button>
+      <button class="btn-option" onclick="enviarOpcionDirecta('Construcción llave en mano')">
+        🔑 Construcción llave en mano
+      </button>
+      <button class="btn-option" onclick="enviarOpcionDirecta('Remodelaciones e intervenciones')">
+        🛠️ Remodelaciones e intervenciones
+      </button>
+      <button class="btn-option" onclick="enviarOpcionDirecta('Asesoría en créditos inmobiliarios')">
+        🏦 Créditos inmobiliarios
+      </button>
+    </div>
+  </section>
+
+  <!-- PORTAFOLIO DE PROYECTOS -->
+  <section id="proyectos" class="portfolio-section">
+    <h2>Proyectos Destacados</h2>
+    <div class="portfolio-grid">
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_casa_la_parota.jpeg" alt="Casa La Parota">
+        <div class="card-info">
+          <h3>Casa La Parota</h3>
+          <p>Comala, Colima</p>
         </div>
-    </header>
+      </div>
 
-    <!-- Hero Section -->
-    <section id="inicio" class="relative min-h-screen flex items-center justify-center pt-24 pb-12 overflow-hidden bg-brand-navy">
-        <div class="absolute inset-0 z-0 opacity-25">
-            <video autoplay loop muted playsinline class="w-full h-full object-cover">
-                <source src="assets/video/hero-bg.mp4" type="video/mp4">
-            </video>
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_las_hadas.jpg" alt="Proyecto Las Hadas">
+        <div class="card-info">
+          <h3>Residencia Las Hadas</h3>
+          <p>Manzanillo, Colima</p>
         </div>
-        
-        <div class="absolute inset-0 bg-gradient-to-r from-brand-navy via-brand-navy/90 to-brand-navy/40 z-10"></div>
-        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy via-transparent to-brand-navy/60 z-10"></div>
+      </div>
 
-        <div class="relative z-20 max-w-7xl mx-auto px-6 w-full">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-                
-                <div class="lg:col-span-7 text-left">
-                    <span class="inline-block text-brand-bronze text-xs md:text-sm font-semibold tracking-[0.3em] uppercase mb-4 border-b border-brand-bronze/40 pb-1">Colima, México</span>
-                    <h1 class="font-serif text-3xl sm:text-5xl lg:text-6xl text-white font-bold leading-[1.15] mb-6 tracking-tight">
-                        Diseño y Construcción con Identidad. <span class="text-slate-300 block">Espacios a tu Medida.</span>
-                    </h1>
-                    <p class="text-slate-300 text-sm md:text-base lg:text-lg max-w-xl mb-8 font-light leading-relaxed">
-                        Desarrollo de proyectos arquitectónicos desde cero, remodelaciones integrales y ejecución de obras listas para recibir créditos inmobiliarios.
-                    </p>
-                    <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4">
-                        <a href="https://wa.me/523121071335?text=Hola%20Sergio,%20me%20interesa%20consultar%20sobre%20un%20proyecto." target="_blank" class="px-7 py-4 bg-brand-bronze hover:bg-brand-bronzeHover text-white font-semibold text-xs tracking-widest uppercase transition-all hover-trigger shadow-xl shadow-brand-bronze/30 text-center">
-                            Iniciar mi Proyecto por WhatsApp
-                        </a>
-                        <a href="#portafolio" class="px-7 py-4 border border-white/20 hover:border-white text-white font-semibold text-xs tracking-widest uppercase transition-all hover-trigger backdrop-blur-sm text-center">
-                            Ver Proyectos 360°
-                        </a>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-5 flex justify-center lg:justify-end relative">
-                    <div class="relative w-full max-w-md lg:max-w-full h-[450px] sm:h-[550px] lg:h-[620px] rounded-sm overflow-hidden shadow-2xl border border-white/10 group">
-                        <img src="assets/imagen/SergioBookV1-14.webp" alt="Sergio Díaz Arquitecto" class="w-full h-full object-cover object-top hover-trigger transform group-hover:scale-105 transition-transform duration-700">
-                        <div class="absolute inset-0 bg-gradient-to-t from-brand-navy/90 via-transparent to-transparent"></div>
-                        <div class="absolute bottom-6 left-6 right-6 text-left">
-                            <span class="text-brand-bronze text-[10px] font-bold tracking-widest uppercase block">Arquitecto & Director General</span>
-                            <p class="font-serif text-white font-bold text-lg">Arq. Sergio Díaz</p>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_cafe_madero.jpeg" alt="Café Madero">
+        <div class="card-info">
+          <h3>Café Madero</h3>
+          <p>Proyecto Comercial</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Sobre Mí / Perfil -->
-    <section id="sobre-mi" class="py-16 md:py-24 bg-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12 items-center">
-                <div class="lg:col-span-5 relative">
-                    <div class="relative z-10 overflow-hidden rounded-sm shadow-2xl">
-                        <img src="assets/imagen/SergioBookV1-104.webp" alt="Sergio Díaz Perfil" class="w-full h-[400px] md:h-[500px] object-cover object-top hover-trigger">
-                    </div>
-                    <div class="absolute -bottom-6 -left-6 w-48 h-48 bg-brand-bg -z-0 border border-slate-200 hidden sm:block"></div>
-                </div>
-
-                <div class="lg:col-span-7">
-                    <span class="text-brand-bronze text-xs font-bold tracking-widest uppercase mb-2 block">Perfil Profesional</span>
-                    <h2 class="font-serif text-2xl md:text-4xl text-brand-navy font-bold mb-4">Arq. Sergio Díaz</h2>
-                    
-                    <a href="https://www.instagram.com/sergiodiaz_arquitectura?stkn=ZnRlaDkwZ3R2ZXRh" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-xs font-semibold text-brand-bronze hover:text-brand-bronzeHover mb-6 hover-trigger">
-                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-                        @sergiodiaz_arquitectura
-                    </a>
-
-                    <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-4">
-                        Entiendo la arquitectura como el equilibrio entre estética, funcionalidad y la optimización real de recursos. Cada proyecto se conceptualiza respetando el entorno y las necesidades particulares de quienes lo habitarán.
-                    </p>
-                    <p class="text-slate-600 text-sm md:text-base leading-relaxed mb-6">
-                        Mi compromiso abarca la dirección técnica directa en obra, garantizando transparencia en presupuestos y la máxima calidad constructiva desde la primera traza de planos hasta la entrega de llaves.
-                    </p>
-
-                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 md:gap-6 pt-6 border-t border-slate-100">
-                        <div class="border-l-2 border-brand-bronze pl-4">
-                            <h4 class="font-serif font-bold text-brand-navy text-base md:text-lg">Diseño a Medida</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">Planos y renders 3D personalizados.</p>
-                        </div>
-                        <div class="border-l-2 border-brand-bronze pl-4">
-                            <h4 class="font-serif font-bold text-brand-navy text-base md:text-lg">Supervisión Directa</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">Presencia constante en obra.</p>
-                        </div>
-                        <div class="border-l-2 border-brand-bronze pl-4">
-                            <h4 class="font-serif font-bold text-brand-navy text-base md:text-lg">Transparencia</h4>
-                            <p class="text-xs text-slate-500 mt-0.5">Costos claros sin sorpresas.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_canam.jpg" alt="Showroom CanAm">
+        <div class="card-info">
+          <h3>Showroom CanAm</h3>
+          <p>Espacio Comercial</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Galería Secundaría / Acompañamiento -->
-    <section class="py-16 bg-slate-900 text-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-                <div class="md:col-span-7">
-                    <h3 class="font-serif text-2xl md:text-3xl font-bold mb-4">Cercanía y Acompañamiento en Todo el Proceso</h3>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-6">
-                        Desde la etapa inicial de diagnóstico del terreno hasta el seguimiento de cada detalle en la construcción. Diseñamos espacios pensando en la durabilidad, el confort y tu patrimonio.
-                    </p>
-                    <a href="https://wa.me/523121071335" target="_blank" class="inline-flex items-center text-brand-bronze text-xs tracking-widest font-bold uppercase hover:text-white transition-colors hover-trigger">
-                        Platicar sobre mi proyecto &rarr;
-                    </a>
-                </div>
-                <div class="md:col-span-5 flex justify-center">
-                    <div class="w-full max-w-sm overflow-hidden rounded-sm shadow-xl bg-slate-950">
-                        <img src="assets/imagen/SergioBookV1-92.webp" alt="Sergio Díaz Consulta" class="w-full h-auto object-cover hover-trigger">
-                    </div>
-                </div>
-            </div>
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_mausoleo.jpg" alt="Mausoleo">
+        <div class="card-info">
+          <h3>Mausoleo</h3>
+          <p>Diseño Especializado</p>
         </div>
-    </section>
+      </div>
 
-    <!-- Servicios (4 Tarjetas) -->
-    <section id="servicios" class="py-16 md:py-24 bg-brand-bg">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center max-w-2xl mx-auto mb-12 md:mb-16">
-                <span class="text-brand-bronze text-xs font-bold tracking-widest uppercase mb-2 block">Líneas de Negocio</span>
-                <h2 class="font-serif text-2xl md:text-4xl text-brand-navy font-bold">Servicios Arquitectónicos</h2>
-                <div class="w-12 h-0.5 bg-brand-bronze mx-auto mt-4"></div>
-            </div>
-
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                <!-- Servicio 1 -->
-                <div class="bg-white p-6 md:p-8 border border-slate-200/80 rounded-sm shadow-sm hover:shadow-xl transition-all hover-trigger group">
-                    <div class="w-12 h-12 bg-slate-100 flex items-center justify-center text-brand-bronze mb-6 group-hover:bg-brand-bronze group-hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M11 4a2 2 0 114 0v1a2 2 0 01-2 2 2 2 0 01-2-2V4zM4 7a2 2 0 012-2h12a2 2 0 012 2v12a2 2 0 01-2 2H6a2 2 0 01-2-2V7z"></path></svg>
-                    </div>
-                    <h3 class="font-serif text-lg md:text-xl font-bold text-brand-navy mb-3">1. Proyecto Arquitectónico Desde Cero</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Desarrollo integral de planos ejecutivos, distribución espacial, modelos y renders 3D para residencias particulares o espacios comerciales.
-                    </p>
-                </div>
-
-                <!-- Servicio 2 -->
-                <div class="bg-white p-6 md:p-8 border border-slate-200/80 rounded-sm shadow-sm hover:shadow-xl transition-all hover-trigger group">
-                    <div class="w-12 h-12 bg-slate-100 flex items-center justify-center text-brand-bronze mb-6 group-hover:bg-brand-bronze group-hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4"></path></svg>
-                    </div>
-                    <h3 class="font-serif text-lg md:text-xl font-bold text-brand-navy mb-3">2. Construcción Llave en Mano</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Ejecución total de la obra civil bajo supervisión profesional continua, coordinando proveedores y contratistas hasta la entrega lista para habitar.
-                    </p>
-                </div>
-
-                <!-- Servicio 3 -->
-                <div class="bg-white p-6 md:p-8 border border-slate-200/80 rounded-sm shadow-sm hover:shadow-xl transition-all hover-trigger group">
-                    <div class="w-12 h-12 bg-slate-100 flex items-center justify-center text-brand-bronze mb-6 group-hover:bg-brand-bronze group-hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path></svg>
-                    </div>
-                    <h3 class="font-serif text-lg md:text-xl font-bold text-brand-navy mb-3">3. Remodelaciones & Intervenciones</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Transformación y modernización de inmuebles existentes, optimizando la iluminación, ventilación y valor patrimonial del espacio.
-                    </p>
-                </div>
-
-                <!-- Servicio 4 -->
-                <div class="bg-white p-6 md:p-8 border border-slate-200/80 rounded-sm shadow-sm hover:shadow-xl transition-all hover-trigger group">
-                    <div class="w-12 h-12 bg-slate-100 flex items-center justify-center text-brand-bronze mb-6 group-hover:bg-brand-bronze group-hover:text-white transition-colors">
-                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 10h18M7 15h1m4 0h1m-7 4h12a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                    </div>
-                    <h3 class="font-serif text-lg md:text-xl font-bold text-brand-navy mb-3">4. Aceptación de Créditos Inmobiliarios</h3>
-                    <p class="text-slate-600 text-sm leading-relaxed">
-                        Adaptación y construcción de proyectos ejecutables mediante el uso de tus créditos de vivienda (Infonavit, IPECOL, Fovissste o bancarios).
-                    </p>
-                </div>
-            </div>
+      <div class="portfolio-card">
+        <img src="assets/imagen/proyecto_prototipo_c.jpeg" alt="Prototipo C">
+        <div class="card-info">
+          <h3>Prototipo C</h3>
+          <p>Residencial</p>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <!-- Portafolio Completo (Todas las fotos vinculadas) -->
-    <section id="portafolio" class="py-16 md:py-24 bg-white">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 md:mb-16">
-                <div>
-                    <span class="text-brand-bronze text-xs font-bold tracking-widest uppercase mb-2 block">Catálogo de Obras</span>
-                    <h2 class="font-serif text-2xl md:text-4xl text-brand-navy font-bold">Portafolio de Proyectos</h2>
-                </div>
-                <p class="text-slate-500 text-xs md:text-sm max-w-md mt-4 md:mt-0">
-                    Explora la diversidad de intervenciones: desde proyectos comerciales e industriales hasta residencias exclusivas y recorridos virtuales 360°.
-                </p>
-            </div>
+  <!-- FORMULARIO DE CONTACTO DETALLADO -->
+  <section id="contacto" class="contact-section">
+    <div class="contact-container">
+      <h2>Comencemos a planear tu obra</h2>
+      <p>Déjanos tus datos completos y los detalles de tu idea para enviarlos por WhatsApp.</p>
 
-            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
-                
-                <!-- 1. Casa La Parota (Render + Tour 360) -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_casa_la_parota.jpg" alt="Casa La Parota Render" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/imagen/proyecto_casa_la_parota.jpeg'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-between">
-                        <div class="flex justify-between items-start">
-                            <span class="bg-brand-bronze text-white text-[10px] font-bold uppercase px-2.5 py-1 tracking-wider rounded-xs shadow-md">Tour 360° Activo</span>
-                        </div>
-                        <div>
-                            <span class="text-slate-400 text-xs block">Comala, Colima</span>
-                            <h3 class="font-serif text-white font-bold text-xl mb-1">Casa La Parota</h3>
-                            <p class="text-slate-300 text-xs mb-3">Recorrido virtual 360° - Avance de obra y render de arquitectura.</p>
-                            <a href="https://clpagosto360.dariuzph.com/app-files/index.html" target="_blank" class="inline-flex items-center text-xs font-semibold text-brand-bronze hover:text-white transition-colors">
-                                Explorar Tour Virtual &rarr;
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 2. Showroom Can-Am -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_canam.jpg" alt="Showroom Can-Am" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/logo/SERGIODIAZLOGO2026.png'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <span class="text-slate-400 text-xs block">Av. San Fernando, Colima</span>
-                        <h3 class="font-serif text-white font-bold text-xl mb-1">Showroom Can-Am</h3>
-                        <p class="text-slate-300 text-xs line-clamp-2">Remodelación e interiorismo industrial comercial para Can-Am, Husqvarna y KTM.</p>
-                    </div>
-                </div>
-
-                <!-- 3. Café Madero -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_cafe_madero.jpeg" alt="Café Madero" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/logo/SERGIODIAZLOGO2026.png'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <span class="text-slate-400 text-xs block">Colima, Colima</span>
-                        <h3 class="font-serif text-white font-bold text-xl mb-1">Café Madero</h3>
-                        <p class="text-slate-300 text-xs line-clamp-2">Diseño comercial estilo californiano con terraza de olivos y barra revestida en cerámica.</p>
-                    </div>
-                </div>
-
-                <!-- 4. Mausoleo Tonalá -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_mausoleo.jpg" alt="Mausoleo Tonalá" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/logo/SERGIODIAZLOGO2026.png'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <span class="text-slate-400 text-xs block">Tonalá, Jalisco</span>
-                        <h3 class="font-serif text-white font-bold text-xl mb-1">Mausoleo Tonalá</h3>
-                        <p class="text-slate-300 text-xs line-clamp-2">Arquitectura funeraria con templos, nichos y terraza de columbarios.</p>
-                    </div>
-                </div>
-
-                <!-- 5. Prototipo C -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_prototipo_c.jpeg" alt="Prototipo C" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/logo/SERGIODIAZLOGO2026.png'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <span class="text-slate-400 text-xs block">Vivienda Unifamiliar</span>
-                        <h3 class="font-serif text-white font-bold text-xl mb-1">Prototipo C</h3>
-                        <p class="text-slate-300 text-xs line-clamp-2">Diseño residencial optimizado para colado modular en terreno de 7 x 18 metros.</p>
-                    </div>
-                </div>
-
-                <!-- 6. Las Hadas 211 (Foto Vinculada) -->
-                <div class="group relative overflow-hidden bg-brand-navy rounded-sm shadow-lg hover-trigger">
-                    <img src="assets/imagen/proyecto_las_hadas.jpg" alt="Las Hadas 211" class="w-full h-72 md:h-80 object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" onerror="this.src='assets/imagen/proyecto_las_hadas.jpeg'">
-                    <div class="absolute inset-0 bg-gradient-to-t from-black/95 via-black/40 to-transparent p-6 flex flex-col justify-end">
-                        <span class="text-slate-400 text-xs block">El Dorado, Manzanillo</span>
-                        <h3 class="font-serif text-white font-bold text-xl mb-1">Las Hadas 211</h3>
-                        <p class="text-slate-300 text-xs line-clamp-2">Ampliación residencial exterior con alberca elevada en chukum, área de asador y velaria tensada.</p>
-                    </div>
-                </div>
-
-            </div>
+      <form id="whatsappForm" onsubmit="enviarWhatsAppFormulario(event)" class="contact-form">
+        <div class="form-group">
+          <label for="nombre">Nombre completo</label>
+          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
         </div>
-    </section>
 
-    <!-- Contacto & Formulario -->
-    <section id="contacto" class="py-16 md:py-24 bg-brand-navy text-white relative">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 md:gap-12">
-                <div class="lg:col-span-5">
-                    <span class="text-brand-bronze text-xs font-bold tracking-widest uppercase mb-2 block">Directo con el Arquitecto</span>
-                    <h2 class="font-serif text-2xl md:text-4xl font-bold mb-6">Comencemos a Planear tu Obra</h2>
-                    <p class="text-slate-400 text-sm leading-relaxed mb-8">
-                        ¿Tienes un terreno en mente, necesitas remodelar o quieres aprovechar tu crédito inmobiliario? Escríbeme directamente, visítanos en Instagram o llena el formulario.
-                    </p>
-
-                    <div class="space-y-4 text-xs md:text-sm text-slate-300">
-                        <div class="flex items-center gap-3">
-                            <span class="text-brand-bronze font-bold">Teléfono / WhatsApp:</span>
-                            <a href="tel:3121071335" class="hover:text-white transition-colors">+52 312 107 1335</a>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-brand-bronze font-bold">Instagram:</span>
-                            <a href="https://www.instagram.com/sergiodiaz_arquitectura?stkn=ZnRlaDkwZ3R2ZXRh" target="_blank" rel="noopener noreferrer" class="hover:text-white transition-colors">@sergiodiaz_arquitectura</a>
-                        </div>
-                        <div class="flex items-center gap-3">
-                            <span class="text-brand-bronze font-bold">Ubicación:</span>
-                            <span>Colima, Colima, México</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="lg:col-span-7 bg-white/5 p-6 md:p-8 border border-white/10 rounded-sm backdrop-blur-sm">
-                    <form action="https://formspree.io/f/placeholder" method="POST" class="space-y-6">
-                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
-                            <div>
-                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Nombre Completo</label>
-                                <input type="text" required class="w-full bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bronze text-sm">
-                            </div>
-                            <div>
-                                <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Teléfono de Contacto</label>
-                                <input type="tel" required class="w-full bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bronze text-sm">
-                            </div>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Tipo de Servicio</label>
-                            <select class="w-full bg-brand-navy border border-white/20 px-4 py-3 text-slate-300 focus:outline-none focus:border-brand-bronze text-sm">
-                                <option>Proyecto Desde Cero</option>
-                                <option>Construcción Llave en Mano</option>
-                                <option>Remodelación / Intervención</option>
-                                <option>Construcción con Crédito (Infonavit / IPECOL / Banco)</option>
-                            </select>
-                        </div>
-
-                        <div>
-                            <label class="block text-xs uppercase tracking-wider text-slate-300 mb-2">Detalles del Proyecto</label>
-                            <textarea rows="4" class="w-full bg-white/10 border border-white/20 px-4 py-3 text-white placeholder-slate-500 focus:outline-none focus:border-brand-bronze text-sm" placeholder="Ubicación aproximada, metros cuadrados o requerimientos..."></textarea>
-                        </div>
-
-                        <button type="submit" class="w-full py-4 bg-brand-bronze hover:bg-brand-bronzeHover text-white font-semibold text-xs tracking-widest uppercase transition-all hover-trigger">
-                            Enviar Mensaje
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div class="form-group">
+          <label for="telefono">Número de contacto</label>
+          <input type="tel" id="telefono" name="telefono" placeholder="Ej. 312 123 4567" required>
         </div>
-    </section>
 
-    <!-- Footer -->
-    <footer class="bg-black py-8 border-t border-white/10 text-center text-xs text-slate-500">
-        <div class="flex justify-center gap-6 mb-4">
-            <a href="https://www.instagram.com/sergiodiaz_arquitectura?stkn=ZnRlaDkwZ3R2ZXRh" target="_blank" rel="noopener noreferrer" class="text-slate-400 hover:text-white transition-colors">Instagram</a>
-            <a href="https://wa.me/523121071335" target="_blank" class="text-slate-400 hover:text-white transition-colors">WhatsApp</a>
+        <div class="form-group">
+          <label for="servicio">Tipo de servicio</label>
+          <select id="servicio" name="servicio" required>
+            <option value="" disabled selected>Selecciona una opción</option>
+            <option value="Proyecto arquitectónico desde cero">Proyecto arquitectónico desde cero</option>
+            <option value="Construcción llave en mano">Construcción llave en mano</option>
+            <option value="Remodelaciones e intervenciones">Remodelaciones e intervenciones</option>
+            <option value="Asesoría en créditos inmobiliarios">Asesoría en créditos inmobiliarios</option>
+          </select>
         </div>
-        <p>&copy; 2026 Sergio Díaz Arquitecto. Todos los derechos reservados. | Desarrollado por <a href="https://dariusph.com" target="_blank" class="text-slate-400 hover:text-white">Dariuz PH</a></p>
-    </footer>
 
-    <!-- Botón Flotante de WhatsApp -->
-    <a href="https://wa.me/523121071335?text=Hola%20Sergio,%20me%20interesa%20consultar%20sobre%20un%20proyecto." target="_blank" class="fixed bottom-6 right-6 z-50 w-12 md:w-14 h-12 md:h-14 bg-emerald-600 hover:bg-emerald-500 text-white rounded-full flex items-center justify-center shadow-2xl transition-all hover:scale-110 hover-trigger" aria-label="WhatsApp">
-        <svg class="w-6 md:w-7 h-6 md:h-7" fill="currentColor" viewBox="0 0 24 24"><path d="M.057 24l1.687-6.163c-1.041-1.804-1.588-3.849-1.587-5.946.003-6.556 5.338-11.891 11.893-11.891 3.181.001 6.167 1.24 8.413 3.488 2.245 2.248 3.481 5.236 3.48 8.414-.003 6.557-5.338 11.892-11.893 11.892-1.99-.001-3.951-.5-5.688-1.448l-6.305 1.654zm6.597-3.807c1.676.995 3.276 1.591 5.392 1.592 5.448 0 9.886-4.434 9.889-9.885.002-5.462-4.415-9.89-9.881-9.892-5.452 0-9.887 4.434-9.889 9.884-.001 2.225.651 3.891 1.746 5.634l-.999 3.648 3.742-.981zm11.387-5.464c-.074-.124-.272-.198-.57-.347-.297-.149-1.758-.868-2.031-.967-.272-.099-.47-.149-.669.149-.198.297-.768.967-.941 1.165-.173.198-.347.223-.644.074-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.297-.347.446-.521.151-.172.2-.296.3-.495.099-.198.05-.372-.025-.521-.075-.148-.669-1.611-.916-2.206-.242-.579-.487-.501-.669-.51l-.57-.01c-.198 0-.52.074-.792.372s-1.04 1.016-1.04 2.479 1.065 2.876 1.213 3.074c.149.198 2.095 3.2 5.076 4.487.709.306 1.263.489 1.694.626.712.226 1.36.194 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.695.248-1.29.173-1.414z"/></svg>
-    </a>
+        <div class="form-group">
+          <label for="mensaje">Detalles del proyecto</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos la ubicación, metros cuadrados o ideas principales..." required></textarea>
+        </div>
 
-    <!-- Custom Cursor JavaScript -->
-    <script>
-        const dot = document.getElementById('cursor-dot');
-        const outline = document.getElementById('cursor-outline');
-        const triggers = document.querySelectorAll('.hover-trigger');
+        <button type="submit" class="btn-submit">Mandar mensaje completo por WhatsApp</button>
+      </form>
+    </div>
+  </section>
 
-        if (window.matchMedia('(pointer: fine)').matches) {
-            window.addEventListener('mousemove', (e) => {
-                const posX = e.clientX;
-                const posY = e.clientY;
+  <!-- FOOTER -->
+  <footer>
+    <p>&copy; 2026 Arq. Sergio Díaz. Todos los derechos reservados.</p>
+  </footer>
 
-                dot.style.left = `${posX}px`;
-                dot.style.top = `${posY}px`;
+  <!-- LÓGICA DE WHATSAPP -->
+  <script>
+    // Configura el número de WhatsApp con lada (Ej: 52312XXXXXXX)
+    const telefonoSergio = "523121234567";
 
-                outline.animate({
-                    left: `${posX}px`,
-                    top: `${posY}px`
-                }, { duration: 500, fill: "forwards" });
-            });
+    // 1. Envío desde los botones rápidos
+    function enviarOpcionDirecta(opcion) {
+      let mensaje = "";
 
-            triggers.forEach(trigger => {
-                trigger.addEventListener('mouseenter', () => {
-                    outline.classList.add('scale-150', 'bg-brand-bronze/10', 'border-brand-bronze');
-                });
-                trigger.addEventListener('mouseleave', () => {
-                    outline.classList.remove('scale-150', 'bg-brand-bronze/10', 'border-brand-bronze');
-                });
-            });
-        }
-    </script>
+      switch (opcion) {
+        case 'Proyecto arquitectónico desde cero':
+          mensaje = "Hola Sergio, te contacto porque quiero armar un proyecto arquitectónico desde cero.";
+          break;
+        case 'Construcción llave en mano':
+          mensaje = "Hola Sergio, te hablo porque quiero una construcción llave en mano.";
+          break;
+        case 'Remodelaciones e intervenciones':
+          mensaje = "Hola Sergio, me gustaría tener información sobre remodelaciones e intervenciones.";
+          break;
+        case 'Asesoría en créditos inmobiliarios':
+          mensaje = "Hola Sergio, miré que aceptas créditos inmobiliarios y me gustaría consultar información.";
+          break;
+        default:
+          mensaje = "Hola Sergio, me gustaría cotizar un proyecto arquitectónico.";
+      }
+
+      const url = `https://wa.me/${telefonoSergio}?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    // 2. Envío desde el formulario completo al final de la página
+    function enviarWhatsAppFormulario(e) {
+      e.preventDefault();
+
+      const nombre = document.getElementById('nombre').value;
+      const contacto = document.getElementById('telefono').value;
+      const servicio = document.getElementById('servicio').value;
+      const detalle = document.getElementById('mensaje').value;
+
+      const texto = `Hola Sergio, te escribo desde la página web:\n\n` +
+                    `*Nombre:* ${nombre}\n` +
+                    `*Contacto:* ${contacto}\n` +
+                    `*Servicio:* ${servicio}\n` +
+                    `*Detalles:* ${detalle}`;
+
+      const url = `https://wa.me/${telefonoSergio}?text=${encodeURIComponent(texto)}`;
+      window.open(url, '_blank');
+    }
+  </script>
+
 </body>
 </html>
