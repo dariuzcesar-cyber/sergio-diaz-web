@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Arq. Sergio Díaz | Arquitectura y Construcción</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Syne:wght@600;700;800&display=swap" rel="stylesheet">
 </head>
 <body>
 
@@ -13,97 +16,168 @@
     <div class="logo">
       <img src="assets/logo/logo.png" alt="Arq. Sergio Díaz Logo">
     </div>
-    <nav>
+    <nav class="nav-links">
+      <a href="#sobre-mi">Sobre Mí</a>
+      <a href="#servicios">Servicios</a>
       <a href="#proyectos">Proyectos</a>
-      <a href="#servicios-whatsapp" class="btn-nav">Iniciar proyecto por WhatsApp</a>
+      <a href="#servicios-whatsapp" class="btn-nav">Iniciar proyecto</a>
     </nav>
   </header>
 
   <!-- HERO SECTION -->
   <section class="hero-split">
     <div class="hero-content">
-      <h1>Diseño Arquitectónico y Construcción con Identidad</h1>
-      <p>Transformamos ideas en espacios funcionales, estéticos y duraderos. Proyectos residenciales y comerciales pensados a la medida de tus necesidades.</p>
+      <span class="badge">Arquitectura & Construcción</span>
+      <h1>Diseño espacial con identidad y rigor constructivo</h1>
+      <p>Transformamos ideas en obras residenciales y comerciales de alto valor arquitectónico, priorizando la luz, la materialidad y la funcionalidad.</p>
       <div class="hero-buttons">
         <a href="#contacto" class="btn-primary">Comencemos a planear tu obra</a>
         <a href="#proyectos" class="btn-secondary">Ver portafolio</a>
       </div>
     </div>
-    <div class="hero-image">
-      <img src="assets/imagen/SergioBookV1-14.webp" alt="Arq. Sergio Díaz">
+    <div class="hero-image-container">
+      <div class="hero-image-overlay"></div>
+      <img src="assets/imagen/SergioBookV1-14.webp" alt="Arq. Sergio Díaz" class="hero-img">
     </div>
   </section>
 
-  <!-- SECCIÓN INTERACTIVA: SELECCIÓN RÁPIDA -->
+  <!-- SOBRE MÍ / TRAYECTORIA -->
+  <section id="sobre-mi" class="about-section">
+    <div class="about-container">
+      <div class="about-text">
+        <span class="section-tag">Trayectoria y Visión</span>
+        <h2>Arq. Sergio Díaz</h2>
+        <p class="about-lead">Más que edificar estructuras, concebimos espacios con propósito, estética perdurable y precisión técnica.</p>
+        <p>Con experiencia en desarrollo residencial, proyectos comerciales y dirección de obra, nuestro enfoque integra desde el primer boceto arquitectónico hasta la entrega de llave en mano, garantizando control presupuestal, atención al detalle y calidad en cada etapa.</p>
+        
+        <div class="stats-grid">
+          <div class="stat-item">
+            <h3>+10</h3>
+            <p>Años de experiencia</p>
+          </div>
+          <div class="stat-item">
+            <h3>100%</h3>
+            <p>Atención personalizada</p>
+          </div>
+          <div class="stat-item">
+            <h3>Integral</h3>
+            <p>Diseño y Ejecución</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCIÓN INTERACTIVA: SELECCIÓN DE SERVICIOS WHATSAPP -->
   <section id="servicios-whatsapp" class="services-quick-select">
-    <h2>¿Qué tipo de proyecto deseas iniciar?</h2>
-    <p>Selecciona una opción para comunicarte directamente con el Arq. Sergio Díaz:</p>
+    <div class="section-header">
+      <span class="section-tag">Atención Directa</span>
+      <h2>¿Qué tipo de proyecto deseas iniciar?</h2>
+      <p>Selecciona la modalidad de tu interés para comunicarte directo por WhatsApp:</p>
+    </div>
 
     <div class="options-grid">
-      <button class="btn-option" onclick="enviarOpcionDirecta('Proyecto arquitectónico desde cero')">
-        📐 Proyecto desde cero
-      </button>
-      <button class="btn-option" onclick="enviarOpcionDirecta('Construcción llave en mano')">
-        🔑 Construcción llave en mano
-      </button>
-      <button class="btn-option" onclick="enviarOpcionDirecta('Remodelaciones e intervenciones')">
-        🛠️ Remodelaciones e intervenciones
-      </button>
-      <button class="btn-option" onclick="enviarOpcionDirecta('Asesoría en créditos inmobiliarios')">
-        🏦 Créditos inmobiliarios
-      </button>
+      <div class="option-card" onclick="enviarOpcionDirecta('Proyecto arquitectónico desde cero')">
+        <div class="icon">📐</div>
+        <h3>Proyecto desde cero</h3>
+        <p>Diseño conceptual, planos ejecutivos, renders y planeación integral.</p>
+        <span class="card-link">Consultar por WhatsApp &rarr;</span>
+      </div>
+
+      <div class="option-card" onclick="enviarOpcionDirecta('Construcción llave en mano')">
+        <div class="icon">🔑</div>
+        <h3>Construcción Llave en Mano</h3>
+        <p>Ejecución total de la obra, supervisión y administración de materiales.</p>
+        <span class="card-link">Consultar por WhatsApp &rarr;</span>
+      </div>
+
+      <div class="option-card" onclick="enviarOpcionDirecta('Remodelaciones e intervenciones')">
+        <div class="icon">🛠️</div>
+        <h3>Remodelaciones e Intervenciones</h3>
+        <p>Renovación de fachada, optimización de espacios e interiorismo.</p>
+        <span class="card-link">Consultar por WhatsApp &rarr;</span>
+      </div>
+
+      <div class="option-card" onclick="enviarOpcionDirecta('Asesoría en créditos inmobiliarios')">
+        <div class="icon">🏦</div>
+        <h3>Créditos Inmobiliarios</h3>
+        <p>Asesoría en proyectos aptos para financiamientos y créditos de construcción.</p>
+        <span class="card-link">Consultar por WhatsApp &rarr;</span>
+      </div>
     </div>
   </section>
 
   <!-- PORTAFOLIO DE PROYECTOS -->
   <section id="proyectos" class="portfolio-section">
-    <h2>Proyectos Destacados</h2>
+    <div class="section-header">
+      <span class="section-tag">Portafolio</span>
+      <h2>Proyectos Destacados</h2>
+    </div>
+
     <div class="portfolio-grid">
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_casa_la_parota.jpeg" alt="Casa La Parota">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_casa_la_parota.jpeg" alt="Casa La Parota">
+        </div>
         <div class="card-info">
+          <span class="category">Residencial</span>
           <h3>Casa La Parota</h3>
           <p>Comala, Colima</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_las_hadas.jpg" alt="Proyecto Las Hadas">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_las_hadas.jpg" alt="Residencia Las Hadas">
+        </div>
         <div class="card-info">
+          <span class="category">Residencial</span>
           <h3>Residencia Las Hadas</h3>
           <p>Manzanillo, Colima</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_cafe_madero.jpeg" alt="Café Madero">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_cafe_madero.jpeg" alt="Café Madero">
+        </div>
         <div class="card-info">
+          <span class="category">Comercial</span>
           <h3>Café Madero</h3>
           <p>Proyecto Comercial</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_canam.jpg" alt="Showroom CanAm">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_canam.jpg" alt="Showroom CanAm">
+        </div>
         <div class="card-info">
+          <span class="category">Comercial</span>
           <h3>Showroom CanAm</h3>
           <p>Espacio Comercial</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_mausoleo.jpg" alt="Mausoleo">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_mausoleo.jpg" alt="Mausoleo">
+        </div>
         <div class="card-info">
+          <span class="category">Especializado</span>
           <h3>Mausoleo</h3>
           <p>Diseño Especializado</p>
         </div>
       </div>
 
       <div class="portfolio-card">
-        <img src="assets/imagen/proyecto_prototipo_c.jpeg" alt="Prototipo C">
+        <div class="card-img-wrapper">
+          <img src="assets/imagen/proyecto_prototipo_c.jpeg" alt="Prototipo C">
+        </div>
         <div class="card-info">
+          <span class="category">Residencial</span>
           <h3>Prototipo C</h3>
-          <p>Residencial</p>
+          <p>Desarrollo Residencial</p>
         </div>
       </div>
     </div>
@@ -112,22 +186,25 @@
   <!-- FORMULARIO DE CONTACTO DETALLADO -->
   <section id="contacto" class="contact-section">
     <div class="contact-container">
+      <span class="section-tag text-center">Contacto</span>
       <h2>Comencemos a planear tu obra</h2>
-      <p>Déjanos tus datos completos y los detalles de tu idea para enviarlos por WhatsApp.</p>
+      <p class="subtitle">Ingresa tus datos y los detalles de tu proyecto para iniciar la conversación por WhatsApp.</p>
 
       <form id="whatsappForm" onsubmit="enviarWhatsAppFormulario(event)" class="contact-form">
-        <div class="form-group">
-          <label for="nombre">Nombre completo</label>
-          <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+        <div class="form-row">
+          <div class="form-group">
+            <label for="nombre">Nombre completo</label>
+            <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+          </div>
+
+          <div class="form-group">
+            <label for="telefono">Teléfono / WhatsApp</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="Ej. 312 123 4567" required>
+          </div>
         </div>
 
         <div class="form-group">
-          <label for="telefono">Número de contacto</label>
-          <input type="tel" id="telefono" name="telefono" placeholder="Ej. 312 123 4567" required>
-        </div>
-
-        <div class="form-group">
-          <label for="servicio">Tipo de servicio</label>
+          <label for="servicio">Tipo de servicio requerida</label>
           <select id="servicio" name="servicio" required>
             <option value="" disabled selected>Selecciona una opción</option>
             <option value="Proyecto arquitectónico desde cero">Proyecto arquitectónico desde cero</option>
@@ -138,8 +215,8 @@
         </div>
 
         <div class="form-group">
-          <label for="mensaje">Detalles del proyecto</label>
-          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos la ubicación, metros cuadrados o ideas principales..." required></textarea>
+          <label for="mensaje">Detalles de tu idea u obra</label>
+          <textarea id="mensaje" name="mensaje" rows="4" placeholder="Ubicación, metros cuadrados aproximados, visión o necesidades principales..." required></textarea>
         </div>
 
         <button type="submit" class="btn-submit">Mandar mensaje completo por WhatsApp</button>
@@ -149,11 +226,14 @@
 
   <!-- FOOTER -->
   <footer>
-    <p>&copy; 2026 Arq. Sergio Díaz. Todos los derechos reservados.</p>
+    <div class="footer-content">
+      <p>&copy; 2026 Arq. Sergio Díaz. Todos los derechos reservados.</p>
+    </div>
   </footer>
 
-  <!-- SCRIPT DE WHATSAPP -->
+  <!-- SCRIPT WHATSAPP -->
   <script>
+    // Configura el teléfono de destino (ej. 521312...)
     const telefonoSergio = "523121234567";
 
     function enviarOpcionDirecta(opcion) {
@@ -184,7 +264,7 @@
       const servicio = document.getElementById('servicio').value;
       const detalle = document.getElementById('mensaje').value;
 
-      const texto = `Hola Sergio, te escribo desde la página web:\n\n` +
+      const texto = `Hola Sergio, te escribo desde tu sitio web:\n\n` +
                     `*Nombre:* ${nombre}\n` +
                     `*Contacto:* ${contacto}\n` +
                     `*Servicio:* ${servicio}\n` +
